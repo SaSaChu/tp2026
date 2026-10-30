@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>施工地圖查詢｜配電工程檢驗輔助子系統</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body class="work-page map-page">
+  <header class="app-header">
+    <a class="app-logo" href="page-all.html" aria-label="台灣電力公司首頁">
+      <img src="images/cover-logo.webp" alt="台灣電力公司">
+    </a>
+    <h1>配電工程檢驗輔助子系統</h1>
+    <button class="menu-toggle btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#app-menu" aria-controls="app-menu" aria-label="開啟選單">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <div class="offcanvas-lg offcanvas-end app-menu" tabindex="-1" id="app-menu" aria-labelledby="menu-title">
+      <div class="offcanvas-header justify-content-end">
+        <h2 class="visually-hidden" id="menu-title">系統選單</h2>
+        <button class="btn-close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#app-menu" aria-label="關閉選單"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="user-info">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <div><strong>林先生，您好</strong><small>系統管理員</small></div>
+        </div>
+        <nav class="app-nav" aria-label="主要功能">
+          <a href="page-all.html" class="nav-action" aria-label="首頁" title="首頁"><i class="bi bi-house-door-fill" aria-hidden="true"></i><span>首頁</span></a>
+          <a href="page01-01-02.html" class="nav-action" aria-label="檔案下載" title="檔案下載"><i class="bi bi-archive-fill" aria-hidden="true"></i><span>檔案下載</span></a>
+          <a href="index.html" class="nav-action" aria-label="登出" title="登出"><i class="bi bi-door-open-fill" aria-hidden="true"></i><span>登出</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-main">
+    <section class="work-toolbar" aria-labelledby="work-title">
+      <h2 id="work-title"><a class="btn app-button back-button" href="page01-01-01.html" aria-label="返回預定工作清單"><i class="bi bi-chevron-left" aria-hidden="true"></i></a>施工地圖查詢</h2>
+      <p class="diary-summary"><span>DCIS：</span>1230147</p>
+    </section>
+
+    <p class="map-address"><span>施工地點：</span>北市士林區中山北路七段85號</p>
+    <section class="map-frame" aria-label="施工地點 Google 地圖">
+      <iframe
+        title="施工地圖：台北市士林區中山北路七段85號"
+        src="https://www.google.com/maps?q=%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A3%AB%E6%9E%97%E5%8D%80%E4%B8%AD%E5%B1%B1%E5%8C%97%E8%B7%AF%E4%B8%83%E6%AE%B585%E8%99%9F&amp;hl=zh-TW&amp;z=15&amp;output=embed"
+        width="100%"
+        height="555"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </section>
+  </main>
+
+  <footer class="app-footer"><strong>系統版本：</strong>240322.01T</footer>
+
+  <script src="js/Bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

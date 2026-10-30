@@ -1,55 +1,69 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Language" content="zh-tw" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
-    
-    <title>Lalilo</title>  
-    <link rel="stylesheet" href="css/index.css">
-  </head>
-  <body lang="zh-Hant">
-    <div class="accordion" id="accordionExample">
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Accordion Item #1
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Accordion Item #2
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Accordion Item #3
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-    </div>
+<html lang="zh-Hant">
 
-    <script src="js/Jquery.min.js"></script>
-    <script src="js/Bootstrap.bundle.min.js"></script>
-    <script src="js/index.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>登入｜台灣電力公司</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body>
+  <main class="login-page">
+
+    <aside class="login-art" aria-label="新配電工程資訊系統">
+      <header class="brand">
+        <span class="brand-logo"><img src="images/cover-logo.webp" alt="台灣電力公司"></span>
+        <p class="brand-title">新配電工程資訊系統</p>
+      </header>
+    </aside>
+
+    <section class="login-content" aria-labelledby="login-title">
+      <p class="system-version">系統版本：240322.01T</p>
+
+      <form class="login-form" id="login-form" action="page-all.html" novalidate>
+        <h1 id="login-title">Sign in</h1>
+        <div class="account-field">
+          <label class="visually-hidden" for="account">帳號</label>
+          <input class="form-control" id="account" name="username" type="text" placeholder="帳號" autocomplete="username" required aria-describedby="account-error">
+          <div class="invalid-feedback" id="account-error">請輸入帳號。</div>
+        </div>
+        <div class="password-field">
+          <label class="visually-hidden" for="password">密碼</label>
+          <input class="form-control" id="password" name="password" type="password" placeholder="密碼" autocomplete="current-password" required aria-describedby="password-error">
+          <button class="password-toggle" type="button" aria-label="顯示密碼" aria-controls="password" aria-pressed="false"><i class="bi bi-eye-slash-fill" aria-hidden="true"></i></button>
+          <div class="invalid-feedback" id="password-error">請輸入密碼。</div>
+        </div>
+        <div class="login-actions">
+          <button class="btn btn-primary" type="submit">登入</button>
+          <button class="btn btn-secondary exit-button" type="button">離開</button>
+        </div>
+        <p class="form-message" id="form-message" role="status" aria-live="polite" hidden></p>
+      </form>
+
+      <footer class="system-info">
+        <div class="organization-info">
+          <p>承辦單位：台灣電力公司配電處</p>
+          <p>聯絡資訊：02-2366-6688</p>
+          <p>系統版本：240322.01T</p>
+          <p>系統時間：<time id="system-time"></time></p>
+        </div>
+        <div class="environment-info"><span>測試環境：</span><div>
+          <p>api url：https://intra.ndcis.taipower.com.tw/dev/APP_API</p>
+          <p>api test mode：false</p>
+          <p>User Agents：</p>
+          <p id="user-agent"></p>
+        </div></div>
+      </footer>
+    </section>
+    
+  </main>
+
+  <script src="js/public.js"></script>
+
+</body>
 </html>

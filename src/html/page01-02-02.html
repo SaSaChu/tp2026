@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>查看預定施工日誌｜配電工程檢驗輔助子系統</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body class="work-page diary-page">
+  <header class="app-header">
+    <a class="app-logo" href="page-all.html" aria-label="台灣電力公司首頁">
+      <img src="images/cover-logo.webp" alt="台灣電力公司">
+    </a>
+    <h1>配電工程檢驗輔助子系統</h1>
+    <button class="menu-toggle btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#app-menu" aria-controls="app-menu" aria-label="開啟選單">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <div class="offcanvas-lg offcanvas-end app-menu" tabindex="-1" id="app-menu" aria-labelledby="menu-title">
+      <div class="offcanvas-header justify-content-end">
+        <h2 class="visually-hidden" id="menu-title">系統選單</h2>
+        <button class="btn-close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#app-menu" aria-label="關閉選單"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="user-info">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <div><strong>林先生，您好</strong><small>系統管理員</small></div>
+        </div>
+        <nav class="app-nav" aria-label="主要功能">
+          <a href="page-all.html" class="nav-action" aria-label="首頁" title="首頁"><i class="bi bi-house-door-fill" aria-hidden="true"></i><span>首頁</span></a>
+          <a href="page01-01-02.html" class="nav-action" aria-label="檔案下載" title="檔案下載"><i class="bi bi-archive-fill" aria-hidden="true"></i><span>檔案下載</span></a>
+          <a href="index.html" class="nav-action" aria-label="登出" title="登出"><i class="bi bi-door-open-fill" aria-hidden="true"></i><span>登出</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-main">
+    <section class="work-toolbar" aria-labelledby="work-title">
+      <h2 id="work-title"><a class="btn app-button back-button" href="page01-01-01.html" aria-label="返回預定工作清單"><i class="bi bi-chevron-left" aria-hidden="true"></i></a>查看預定施工日誌</h2>
+      <p class="diary-summary"><span>DCIS：</span>1230147 <span class="text-body mx-2">｜</span> <span>工作班：</span>W7X02</p>
+    </section>
+
+    <form class="work-panel detail-form" aria-label="預定施工日誌，唯讀資料">
+      <fieldset class="detail-grid report-fields">
+        <legend class="visually-hidden">填報資訊</legend>
+        <div class="detail-field">
+          <label for="report-contractor">填報承攬商</label>
+          <input class="form-control" id="report-contractor" type="text" value="永新（宏康）" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="report-date">填報日期</label>
+          <input class="form-control" id="report-date" type="text" value="2017/09/08" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="office">工程區處</label>
+          <input class="form-control" id="office" type="text" value="105" readonly>
+        </div>
+        <div class="detail-field detail-contract">
+          <label for="contract">契約名稱</label>
+          <input class="form-control" id="contract" type="text" value="105A外" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="arrival">到達時間</label>
+          <input class="form-control" id="arrival" type="text" value="" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="departure">離開時間</label>
+          <input class="form-control" id="departure" type="text" value="" readonly>
+        </div>
+      </fieldset>
+
+      <fieldset class="detail-grid">
+        <legend class="visually-hidden">施工資訊</legend>
+        <div class="detail-field">
+          <label for="construction-number">施工號碼</label>
+          <input class="form-control" id="construction-number" type="text" value="B0241942A" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="dcis-number">DCIS號碼</label>
+          <input class="form-control" id="dcis-number" type="text" value="3010061" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="planned-sites">當日預定施工積點</label>
+          <input class="form-control" id="planned-sites" type="text" value="100" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="construction-time">施工時間</label>
+          <input class="form-control" id="construction-time" type="text" value="2017/09/08 日間" readonly>
+        </div>
+        <div class="detail-field detail-stacked detail-wide">
+          <label for="address">施工地址(桿號或配電設備座標)</label>
+          <input class="form-control" id="address" type="text" value="中市潭子區橋中段457–8地號甘水路183巷8–7號邊" readonly>
+        </div>
+        <div class="detail-field detail-stacked detail-wide">
+          <label for="work-content">工作內容</label>
+          <input class="form-control" id="work-content" type="text" value="高壓停電改接饋線低壓線添架、停電高壓線添架" readonly>
+        </div>
+        <div class="detail-field detail-stacked detail-wide detail-start">
+          <label for="team-members">領班(聯絡電話)及組員名單</label>
+          <input class="form-control" id="team-members" type="text" value="" readonly>
+        </div>
+        <div class="detail-field detail-start">
+          <label for="contractor">承攬商</label>
+          <input class="form-control" id="contractor" type="text" value="永新（宏康）" readonly>
+        </div>
+        <div class="detail-field">
+          <label for="team-code">工作班別(代號)</label>
+          <input class="form-control" id="team-code" type="text" value="" readonly>
+        </div>
+        <div class="detail-field detail-inspector">
+          <label for="inspector">檢驗員</label>
+          <input class="form-control" id="inspector" type="text" value="" readonly>
+        </div>
+        <div class="detail-field detail-stacked detail-full">
+          <label for="notes">備註</label>
+          <textarea class="form-control" id="notes" rows="5" readonly></textarea>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer class="app-footer"><strong>系統版本：</strong>240322.01T</footer>
+
+  <script src="js/Bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

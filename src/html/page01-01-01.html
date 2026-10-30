@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>預定工作清單｜配電工程檢驗輔助子系統</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+
+<body class="work-page">
+  <header class="app-header">
+    <a class="app-logo" href="page-all.html" aria-label="台灣電力公司首頁">
+      <img src="images/cover-logo.webp" alt="台灣電力公司">
+    </a>
+    <h1>配電工程檢驗輔助子系統</h1>
+    <button class="menu-toggle btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#app-menu" aria-controls="app-menu" aria-label="開啟選單">
+      <i class="bi bi-list" aria-hidden="true"></i>
+    </button>
+
+    <div class="offcanvas-lg offcanvas-end app-menu" tabindex="-1" id="app-menu" aria-labelledby="menu-title">
+      <div class="offcanvas-header justify-content-end">
+        <h2 class="visually-hidden" id="menu-title">系統選單</h2>
+        <button class="btn-close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#app-menu" aria-label="關閉選單"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="user-info">
+          <i class="bi bi-person-circle" aria-hidden="true"></i>
+          <div><strong>林先生，您好</strong><small>系統管理員</small></div>
+        </div>
+        <nav class="app-nav" aria-label="主要功能">
+          <a href="page-all.html" class="nav-action" aria-label="首頁" title="首頁"><i class="bi bi-house-door-fill" aria-hidden="true"></i><span>首頁</span></a>
+          <a href="page01-01-02.html" class="nav-action" aria-label="檔案下載" title="檔案下載"><i class="bi bi-archive-fill" aria-hidden="true"></i><span>檔案下載</span></a>
+          <a href="index.html" class="nav-action" aria-label="登出" title="登出"><i class="bi bi-door-open-fill" aria-hidden="true"></i><span>登出</span></a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="work-main">
+    <section class="work-toolbar" aria-labelledby="work-title">
+      <h2 id="work-title">預定工作清單</h2>
+      <form class="work-filters" id="work-filters" role="search">
+        <div class="filter-field date-filter">
+          <label for="work-date">施工日期</label>
+          <input class="form-control" id="work-date" name="date" type="date" aria-label="施工日期">
+        </div>
+        <div class="search-field">
+          <label class="visually-hidden" for="work-search">DCIS/施工號碼查詢</label>
+          <input class="form-control" id="work-search" name="search" type="search" placeholder="DCIS/施工號碼查詢">
+          <button class="btn" type="submit" aria-label="查詢"><i class="bi bi-search" aria-hidden="true"></i></button>
+        </div>
+        <div class="filter-field status-filter">
+          <label for="work-filter">案件篩選</label>
+          <select class="form-select" id="work-filter" name="status">
+            <option value="all">全部案件</option>
+            <option value="pending">未完成</option>
+            <option value="completed">已完成</option>
+          </select>
+        </div>
+      </form>
+    </section>
+
+    <section class="work-panel" aria-label="預定工作列表">
+      <div class="table-responsive" tabindex="0" role="region" aria-label="工作清單，可左右捲動查看完整欄位">
+        <table class="table work-table">
+          <caption class="visually-hidden">預定工作清單，包含狀態、工程號碼與施工資訊</caption>
+          <colgroup>
+            <col class="status-col"><col class="dcis-col"><col class="number-col">
+            <col class="inspector-col"><col class="date-col"><col class="content-col">
+            <col class="location-col"><col class="type-col"><col class="note-col">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">狀態</th><th scope="col">DCIS號碼</th><th scope="col">施工號碼</th>
+              <th scope="col">檢驗員</th><th scope="col">施工時間</th><th scope="col">工作內容</th>
+              <th scope="col">施工地點</th><th scope="col">回報性質</th><th scope="col">備註</th>
+            </tr>
+          </thead>
+          <tbody id="work-rows">
+            <tr tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="case-menu" data-date="2021-04-13" data-status="pending">
+              <td><span class="work-status" aria-label="未完成">未</span></td>
+              <td>7172043</td>
+              <td>B0600015A</td>
+              <td><span class="text-truncate d-block" title="工務主辦XXXXXXXXXXXX">工務主辦XXXXXXXXXXXX工務主辦XXXXXXXXXXXX工務主辦XXXXXXXXXXXX工務主辦XXXXXXXXXXXX</span></td>
+              <td>2021/04/13</td>
+              <td><span class="text-truncate d-block" title="工作內容XXXXXXXXXXXX">工作內容XXXXXXXXXXXX</span></td>
+              <td><span class="text-truncate d-block" title="新北板橋區文化路一段253巷">新北板橋區文化路一段253巷</span></td>
+              <td>外線</td>
+              <td>否</td>
+            </tr>
+            <tr tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="case-menu" data-date="2021-04-13" data-status="pending">
+              <td><span class="work-status" aria-label="未完成">未</span></td>
+              <td>7172043</td>
+              <td>B0600015A</td>
+              <td><span class="text-truncate d-block" title="工務主辦XXXXXXXXXXXX">工務主辦XXXXXXXXXXXX</span></td>
+              <td>2021/04/13</td>
+              <td><span class="text-truncate d-block" title="工作內容XXXXXXXXXXXX">工作內容XXXXXXXXXXXX</span></td>
+              <td><span class="text-truncate d-block" title="新北板橋區文化路一段253巷">新北板橋區文化路一段253巷</span></td>
+              <td>外線</td>
+              <td>否</td>
+            </tr>
+            <tr tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-controls="case-menu" data-date="2021-04-13" data-status="pending">
+              <td><span class="work-status" aria-label="未完成">未</span></td>
+              <td>7172043</td>
+              <td>B0600015A</td>
+              <td><span class="text-truncate d-block" title="工務主辦XXXXXXXXXXXX">工務主辦XXXXXXXXXXXX</span></td>
+              <td>2021/04/13</td>
+              <td><span class="text-truncate d-block" title="工作內容XXXXXXXXXXXX">工作內容XXXXXXXXXXXX</span></td>
+              <td><span class="text-truncate d-block" title="新北板橋區文化路一段253巷">新北板橋區文化路一段253巷</span></td>
+              <td>外線</td>
+              <td>否</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-secondary py-4" id="empty-result" role="status" hidden>沒有符合條件的案件</p>
+      <p class="visually-hidden" id="work-feedback" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <ul class="dropdown-menu case-menu" id="case-menu" role="menu" aria-label="案件操作">
+    <li role="none"><a class="dropdown-item" href="#" role="menuitem">回報項目</a></li>
+    <li role="none"><a class="dropdown-item" href="page01-02-02.html" role="menuitem">查看預定施工日誌</a></li>
+    <li role="none"><a class="dropdown-item" href="#report-type-modal" role="menuitem" data-case-action="report-type" aria-haspopup="dialog">回報性質修改</a></li>
+    <li role="none"><a class="dropdown-item" href="page01-04-02.html" role="menuitem">查看資料</a></li>
+    <li role="none"><a class="dropdown-item" href="page01-05-02.html" role="menuitem">施工地圖查詢</a></li>
+    <li role="none"><a class="dropdown-item" href="#" role="menuitem">清除並重新下載</a></li>
+  </ul>
+
+  <div class="modal fade report-modal" id="report-type-modal" tabindex="-1" aria-labelledby="report-type-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form class="modal-content" id="report-type-form">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="report-type-title">回報性質修改</h2>
+        </div>
+        <div class="modal-body">
+          <fieldset class="d-flex justify-content-between">
+            <legend class="visually-hidden">回報性質</legend>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="report-type" id="report-outdoor" value="外線" checked>
+              <label class="form-check-label" for="report-outdoor">外線</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="report-type" id="report-pipeline" value="管路">
+              <label class="form-check-label" for="report-pipeline">管路</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="modal-footer d-grid">
+          <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">取消</button>
+          <button class="btn app-button" type="submit">確認</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="app-footer"><strong>系統版本：</strong>240322.01T</footer>
+
+  <script src="js/Bootstrap.bundle.min.js"></script>
+  <script src="js/page01-01.js"></script>
+
+</body>
+</html>
